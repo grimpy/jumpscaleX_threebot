@@ -25,7 +25,7 @@ def providers():
 
 @app.route("/oauth/key")
 def key():
-    return j.data.nacl.default.verify_key_hex
+    return j.me.encryptor.verify_key_hex
 
 
 app = oauth_app.app
