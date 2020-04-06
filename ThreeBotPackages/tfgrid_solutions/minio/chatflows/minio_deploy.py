@@ -13,7 +13,7 @@ def chat(bot):
     flist_url = "https://hub.grid.tf/tf-official-apps/minio-2020-01-25T02-50-51Z.flist"
     explorer = j.clients.explorer.default
 
-    if not j.tools.threebot.with_threebotconnect:
+    if not j.core.myenv.config.get("THREEBOT_CONNECT", False):
         error_msg = """
         This chatflow is not supported when Threebot is in dev mode.
         To enable Threebot connect : `j.tools.threebot.threebotconnect_disable()`
